@@ -10,6 +10,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {OnboardingPage} from "../pages/onboarding/onboarding";
+import { AuthServiceService } from '../providers/auth-service/auth-service';
+import {ForgotPasswordPage} from "../pages/forgot-password/forgot-password";
+import {CreateAccountPage} from "../pages/create-account/create-account";
 
 @NgModule({
   declarations: [
@@ -17,7 +21,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    OnboardingPage,
+    ForgotPasswordPage,
+    CreateAccountPage
   ],
   imports: [
     BrowserModule,
@@ -29,12 +36,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    OnboardingPage,
+    ForgotPasswordPage,
+    CreateAccountPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceService
   ]
 })
 export class AppModule {}

@@ -1,0 +1,39 @@
+<ion-content padding>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <img class="onboarding-logo" src="assets/icon/lock.png" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <form novalidate [formGroup]="user" (ngSubmit)="login(user)">
+    <ion-list class="no-list-border">
+      <ion-item>
+        <ion-input type="email" formControlName="email" placeholder="Email" color="secondary" text-start></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" formControlName="password" placeholder="Password" color="secondary" text-start></ion-input>
+      </ion-item>
+    </ion-list>
+    
+    <div>
+      <button ion-button full clear small type="button" (click)="goToForgotPassword()" color="secondary04">Forgot your password?</button>
+    </div>
+    <div>
+      <p class="error-message">{{errorMessage}}</p>
+    </div>
+    
+    <div class="submit-button-container">
+      <button ion-button full round type="submit" [disabled]="!user.valid || isLoading">
+        <span *ngIf="!isLoading">Log in</span>
+        <span *ngIf="isLoading">Loading</span>
+      </button>
+    </div>
+  </form>
+  
+  <div>
+    <button class="create-account-button" ion-button full clear (click)="goToCreateAccount()">Create account</button>
+  </div>
+</ion-content>

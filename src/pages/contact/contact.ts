@@ -1,14 +1,33 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {App, NavController} from 'ionic-angular';
+import {AuthServiceService} from "../../providers/auth-service/auth-service";
+import {OnboardingPage} from "../onboarding/onboarding";
+import {AuthGuard} from "../../providers/auth-gard/auth-gard";
 
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
-export class ContactPage {
+export class ContactPage extends AuthGuard {
 
-  constructor(public navCtrl: NavController) {
+  private errorMessage: string;
+  constructor(
+      public navCtrl: NavController,
+      public authSvc: AuthServiceService,
+      public app: App
+  ) {
+    super(authSvc, navCtrl);
 
+  }
+
+  logOut() {
+    this.authSvc.logOut().subscribe(() => {
+      //redirect
+      console.log('success logout');
+      this.navCtrl.push(OnboardingPage);
+    }, (error: any) => {
+      this.errorMessage = error;
+    })
   }
 
 }
