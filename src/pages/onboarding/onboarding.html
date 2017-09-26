@@ -19,7 +19,7 @@
     </ion-list>
     
     <div>
-      <button ion-button full clear small type="button" (click)="goToForgotPassword()" color="secondary04">Forgot your password?</button>
+      <button class="forgot-password-btn" ion-button full clear small type="button" (click)="goToForgotPassword()">Forgot your password?</button>
     </div>
     <div>
       <p class="error-message">{{errorMessage}}</p>
@@ -34,6 +34,6 @@
   </form>
   
   <div>
-    <button class="create-account-button" ion-button full clear (click)="goToCreateAccount()">Create account</button>
+    <button class="create-account-btn" ion-button full clear (click)="goToCreateAccount()">Create account</button>
   </div>
 </ion-content>

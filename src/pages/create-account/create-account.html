@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>CreateAccountPage</ion-title>
+    <ion-title>Create Account</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,23 +15,29 @@
 
 <ion-content padding>
   
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <img class="create-account-logo" src="assets/icon/person.png" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
   <form novalidate [formGroup]="registerForm" (ngSubmit)="register()">
     <ion-list>
       <ion-item>
-        <ion-input type="text" formControlName="name" placeholder="Name" text-center></ion-input>
+        <ion-input type="text" formControlName="name" placeholder="Name" ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="email" formControlName="email" placeholder="Email" text-center></ion-input>
+        <ion-input type="email" formControlName="email" placeholder="Email"r></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="password" formControlName="password" placeholder="Password" text-center></ion-input>
+        <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
       </ion-item>
     </ion-list>
     
-    <p class="help-text" text-center>An email will be send to you.</p>
-    
     <div class="submit-button-container">
-      <button ion-button full round type="submit" [disabled]="!registerForm.valid || isLoading">Send email</button>
+      <button ion-button full round type="submit" [disabled]="!registerForm.valid || isLoading">Register</button>
     </div>
   </form>
 

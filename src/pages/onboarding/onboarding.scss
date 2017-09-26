@@ -8,7 +8,7 @@ page-onboarding {
 		}
 
 		.submit-button-container {
-			padding: 0;// 9px 0 9px;
+			padding: 0; // 9px 0 9px;
 			margin: 20px 0 33px 0;
 			background: cornflowerblue;
 			border-radius: 50px;
@@ -18,14 +18,18 @@ page-onboarding {
 		}
 
 	}
-	.create-account-button {
+	.forgot-password-btn {
+
+		color: #80aeff;
+	}
+	.create-account-btn {
 		height: 20px;
-		color:cadetblue;
+		color: cornflowerblue;
 	}
 	ion-col {
 		text-align: center;
 	}
-	.onboarding-logo{
+	.onboarding-logo {
 		width: 60px;
 		height: 60px;
 		margin-bottom: 60px;

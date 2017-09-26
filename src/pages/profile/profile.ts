@@ -5,10 +5,10 @@ import {OnboardingPage} from "../onboarding/onboarding";
 import {AuthGuard} from "../../providers/auth-gard/auth-gard";
 
 @Component({
-  selector: 'page-contact',
-  templateUrl: 'contact.html'
+  selector: 'page-profile',
+  templateUrl: 'profile.html'
 })
-export class ContactPage extends AuthGuard {
+export class ProfilePage extends AuthGuard {
 
   private errorMessage: string;
   constructor(
