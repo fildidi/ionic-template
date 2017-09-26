@@ -22,7 +22,6 @@ export class ProfilePage extends AuthGuard {
     logOut() {
         this.authSvc.logOut().subscribe(() => {
             //redirect
-            console.log('success logout');
             this.app.getRootNavs()[0].setRoot(OnboardingPage)
         }, (error: any) => {
             this.errorMessage = error;

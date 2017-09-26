@@ -38,15 +38,8 @@ export class ForgotPasswordPage {
         this.email = this.userForgot.controls['email'];
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad ForgotPasswordPage');
-    }
 
-    goBack() {
-        this.navCtrl.pop();
-    }
-
-        resetPassword(): void {
+    resetPassword(): void {
         if (this.userForgot.valid) {
             let registerInformation: ICredentials = {
                 email: this.userForgot.controls.email.value,

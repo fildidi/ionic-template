@@ -41,31 +41,23 @@ export class OnboardingPage {
             email: ['', Validators.compose([Validators.required, Validators.email])],
             password: ['', Validators.required],
         });
-
-        if (platform.is('cordova')) {
-            this.showBuildInfo = true;
-
-        } else {
-            this.showBuildInfo = false;
-        }
     }
 
 
     public login(user) {
-    if (user.valid) {
-        let userInformation: ICredentials = {
-            email: this.user.controls.email.value,
-            password: this.user.controls.password.value
-        };
-        this.authService.login(userInformation).subscribe(() => {
-            //redirect
-            console.log('success login');
-            this.app.getRootNavs()[0].setRoot(TabsPage);
-        }, (error: any) => {
-            this.errorMessage = error;
-        })
+        if (user.valid) {
+            let userInformation: ICredentials = {
+                email: this.user.controls.email.value,
+                password: this.user.controls.password.value
+            };
+            this.authService.login(userInformation).subscribe(() => {
+                //redirect
+                this.app.getRootNavs()[0].setRoot(TabsPage);
+            }, (error: any) => {
+                this.errorMessage = error;
+            })
+        }
     }
-}
 
     public goToForgotPassword() {
         this.navCtrl.push(ForgotPasswordPage);

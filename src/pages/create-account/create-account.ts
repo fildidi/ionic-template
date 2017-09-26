@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
-import {AlertController, App, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthServiceService} from "../../providers/auth-service/auth-service";
 import {ICredentials} from "../../providers/auth-service/credentials.model";
-import {TabsPage} from "../tabs/tabs";
 import {OnboardingPage} from "../onboarding/onboarding";
 
 /**
@@ -25,10 +24,8 @@ export class CreateAccountPage {
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
-                private app: App,
                 private formBuilder: FormBuilder,
-                private authService: AuthServiceService,
-                private alertCtrl: AlertController) {
+                private authService: AuthServiceService) {
 
         this.registerForm = this.formBuilder.group({
             name: ['', Validators.compose([Validators.required])],
@@ -41,10 +38,6 @@ export class CreateAccountPage {
                     Validators.pattern(/\d/)
                 ])]
         });
-    }
-
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad CreateAccountPage');
     }
 
     public register(): void {
