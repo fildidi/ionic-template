@@ -3,7 +3,9 @@
 
 First run the following command:
 ```bash
+$ sudo npm install
 $ sudo npm install -g ionic cordova
+
 ```
 To run it in the browser use the following command:
 ```bash
