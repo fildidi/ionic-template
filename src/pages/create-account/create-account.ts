@@ -36,7 +36,7 @@ export class CreateAccountPage {
             password: [null, Validators.compose(
                 [
                     Validators.required,
-                    Validators.minLength(8),
+                    Validators.minLength(3),
                     Validators.maxLength(100),
                     Validators.pattern(/\d/)
                 ])]
