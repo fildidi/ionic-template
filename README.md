@@ -1,4 +1,3 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
 ## How to use this template
 
@@ -8,19 +7,18 @@ To use this template, either create a new ionic project using the ionic node.js 
 
 ### With the Ionic CLI:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
+First run the following command:
 ```bash
 $ sudo npm install -g ionic cordova
-$ ionic start myTabs tabs
 ```
-
-Then, to run it, cd into `myTabs` and run:
-
+To run it in the browser use the following command:
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
+$ ionic serve
 
-Substitute ios for android if not on a Mac.
+```
+To run it in on a phone, use the following command (only android, since ceritfcates needs to be setup up in order to run it on ios):
+```bash
+$ ionic cordova platform add android
+$ ionic cordova run android
+```
 
